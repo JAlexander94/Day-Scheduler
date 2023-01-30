@@ -1,4 +1,6 @@
 var textareas = document.getElementsByTagName("textarea")
+var buttonlock = document.getElementsByTagName("button")
+
 
 //working clock that sends the text to #date-time h2 in the header
 setInterval(function(){
@@ -30,6 +32,7 @@ $("button").click(function(event){
             var eventarr = {[timehour]:text}
             storedevents.push(eventarr)
             localStorage.setItem("events",JSON.stringify(storedevents))
+            buttonlock[i].setAttribute("class","btn col-1 fa fa-lock saveBtn")
         }
     }
 })
