@@ -20,15 +20,15 @@ The project specifically wanted the user to be able to select
 
 Click the link to run the website
 
-
+https://jalexander94.github.io/Day-Scheduler/
 
 ## Usage
 
 Add events into the timeblocks and clikc the lock button to save the events so that they can be viewed for the rest of the day
 
-![screenshot of the webpage before any events have been added]()
-![screenshot of the webpage with two events added and the lock symbol chnaged to symbolise to the user that it has been saved]()
-![screenshot of the webpage with the events still there after reloading but the locks open to symbolise that the user may want to change them]()
+![screenshot of the webpage before any events have been added](https://github.com/JAlexander94/Day-Scheduler/blob/main/assets/images/Screenshot%202023-01-31%20at%2021.24.14.png)
+![screenshot of the webpage with two events added and the lock symbol chnaged to symbolise to the user that it has been saved](https://github.com/JAlexander94/Day-Scheduler/blob/main/assets/images/Screenshot%202023-01-31%20at%2021.24.55.png)
+![screenshot of the webpage with the events still there after reloading but the locks open to symbolise that the user may want to change them](https://github.com/JAlexander94/Day-Scheduler/blob/main/assets/images/Screenshot%202023-01-31%20at%2021.25.10.png)
 
 ## License
 
