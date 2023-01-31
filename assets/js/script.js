@@ -2,10 +2,11 @@ var textareas = document.getElementsByTagName("textarea")
 var buttonlock = document.getElementsByTagName("button")
 
 
-//working clock that sends the text to #date-time h2 in the header
 setInterval(function(){
     var today = moment()
-    $("#currentDay").text(today.format("DD MMM YYYY")+" at "+today.format("hh:mm:ss a"));
+    //working date that sends the text to #currentDay
+    $("#currentDay").text(today.format("dddd, MMMM Do"));
+    //loop which changes the styling dpending on what stage of the day it is
     var hour = moment().hour()
     for (i=0;i<textareas.length;i++){
     var timehour = textareas[i].getAttribute("data-hour")
@@ -17,12 +18,21 @@ setInterval(function(){
         textareas[i].setAttribute("class","form-control future time-block col-10")
         }
     }
-    if(moment().hour()==0 && moment().minute()==0 && moment().second()==0){window.localStorage.removeItem("events")}
+    //reloads the page and wipes the memory when each new day starts
+    var hourofday = moment().hour()
+    var minute = moment().minute()
+    var second = moment().second()
+    if(hourofday==00 && minute==00 && second==00){
+        window.localStorage.removeItem("events")
+        init()
+        location.reload()
+    }
 },1000)
 
 var container = document.getElementsByClassName("container")
 var storedevents =[]
 
+//function that stores any text that has been written in the textareas when the save button is clicked (it also chnages the lock symbol from unlocked to lock)
 $("button").click(function(event){
     var button = event.target.getAttribute("data-hour")
     for (i=0;i<textareas.length;i++){
@@ -37,6 +47,7 @@ $("button").click(function(event){
     }
 })
 
+//function to load the page with any stored events from the local storage unless its the next day in whcih case they will have been wiped in the setInterval
 function init(){
     storedevents = JSON.parse(localStorage.getItem("events"))
     if(storedevents===null){storedevents=[]}
